@@ -1,0 +1,79 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: controle-materiais-api
+  namespace: dev
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: controle-materiais-api
+  template:
+    metadata:
+      labels:
+        app: controle-materiais-api
+    spec:
+      containers:
+      - name: controle-materiais-api
+        image: crinovacao.azurecr.io/titcs/controle-materiais-api:$(Build.BuildId)
+        resources:
+          requests:
+            memory: "128Mi"
+            cpu: "100m"
+          limits:
+            memory: "512Mi"    
+            cpu: "500m"
+        ports:
+        - containerPort: 80
+          name: http
+        imagePullPolicy: IfNotPresent 
+        env:
+          - name: APP_URL
+            value: "https://controle-materiais.titcs-devops.com.br/api"
+          - name: DB_CONNECTION
+            value: "mysql"
+          - name: DB_HOST
+            value: "52.224.28.190"
+          - name: DB_PORT
+            value: "3306"
+          - name: DB_DATABASE
+            value: "controle_materiais"
+          - name: KEYCLOAK_URL
+            value: "https://keycloak.titcs-devops.com.br/auth"
+          - name: KEYCLOAK_REALM
+            value: "CBMMG"
+          - name: KEYCLOAK_CLIENT
+            value: "almoxerifado"
+          - name: KEYCLOAK_CLIENT_ID
+            value: 024ca51f-e973-4582-b26b-d7173bf810a6
+          - name: KEYCLOAK_ADMIN
+            value: admin
+          - name: KEYCLOAK_ADMIN_PASS
+            value: 'PFrqd87543JKLGB#$AuX'
+          - name: KEYCLOAK_PKEY
+            value: "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEArKQ9Qr97hqTpCXx5H8/IIaqYV79xmFdTzmjH6JxHr1ks//eXZX9ixtVNsjw8AB+Fm+cfAPUVD0+KZYTd0R8xAImZqorspwSUoDcg/67LY89em8PSzJKwOeepTIZNRABXEcDfb52A7tSlNRcuI5AYTlxvHX+KtBz2QTkSrFgi67892OpviyRlNUT45XfyH2b1B6Z0XLcWh5zetxN+//qQHrFCGDuP0qHrwDSqAQoBtgaOYgreZXgb3d/wBRGhx0leMjVdeVW2Jql0J+CCILJPPnpFcVwlBAs4byjnBmgCfHCws8ytr3uBfJV9TThcR20jqkguZhNwwHZTbK+JI8KtuQIDAQAB"
+          - name: DB_SECOND_CONNECTION
+            value: "mysql"
+          - name: DB_SECOND_HOST
+            value: "52.224.28.190"
+          - name: DB_SECOND_PORT
+            value: "3306"
+          - name: DB_SECOND_DATABASE
+            value: "sigrh"
+
+        envFrom:
+                - secretRef:
+                    name: controle-materiais-db
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name:  controle-materiais-api
+  namespace: dev
+spec:
+  selector:
+    app:  controle-materiais-api
+  type:  ClusterIP
+  ports:
+  - port: 80
+    targetPort: 80

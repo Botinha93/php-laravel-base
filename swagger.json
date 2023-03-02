@@ -1,0 +1,21 @@
+
+   ErrorException 
+
+  Method ReflectionParameter::getClass() is deprecated
+
+  at C:\xampp\htdocs\base\base\vendor\mtrajano\laravel-swagger\src\Generator.php:193
+    189Ôûò 
+    190Ôûò         $parameters = $action_instance->getParameters();
+    191Ôûò 
+    192Ôûò         foreach ($parameters as $parameter) {
+  Ô×£ 193Ôûò             $class = $parameter->getClass();
+    194Ôûò 
+    195Ôûò             if (!$class) {
+    196Ôûò                 continue;
+    197Ôûò             }
+
+  1   C:\xampp\htdocs\base\base\vendor\mtrajano\laravel-swagger\src\Generator.php:193
+      Illuminate\Foundation\Bootstrap\HandleExceptions::handleError("Method ReflectionParameter::getClass() is deprecated", "C:\xampp\htdocs\base\base\vendor\mtrajano\laravel-swagger\src\Generator.php")
+
+  2   C:\xampp\htdocs\base\base\vendor\mtrajano\laravel-swagger\src\Generator.php:156
+      Mtrajano\LaravelSwagger\Generator::getFormRules()

@@ -1,0 +1,103 @@
+%PDF-1.1
+%¥±ë
+
+1 0 obj
+  << /Type /Catalog
+     /Pages 2 0 R
+  >>
+endobj
+
+2 0 obj
+  << /Type /Pages
+     /Kids [3 0 R]
+     /Count 1
+     /MediaBox [50 0 300 244]
+  >>
+endobj
+
+3 0 obj
+  <<  /Type /Page
+      /Parent 2 0 R
+      /Resources
+       << /Font
+           << /F1
+               << /Type /Font
+                  /Subtype /Type1
+                  /BaseFont /Times-Roman
+               >>
+           >>
+       >>
+      /Contents 4 0 R
+  >>
+endobj
+
+4 0 obj
+  << /Length 55 >>
+stream
+  BT
+    /F1 18 Tf
+    0 242 Td
+    (___________________________________________) Tj
+  ET
+  BT
+    /F1 18 Tf
+    150 200 Td
+    (Recibo) Tj
+  ET
+  BT
+    /F1 10 Tf
+    60 160 Td
+    (Recibo Numero:idRecibo) Tj
+  ET
+  BT
+    /F1 10 Tf
+    60 140 Td
+    (Codigo do Material: idMaterial) Tj
+  ET
+  BT
+    /F1 10 Tf
+    60 120 Td
+    (Entregue Por: userEntrega) Tj
+  ET
+  BT
+    /F1 10 Tf
+    60 100 Td
+    (Recebido Por: userRecebe) Tj
+  ET
+  BT
+    /F1 10 Tf
+    60 80 Td
+    (Unidade de Origem: unidadeEntrega) Tj
+  ET
+  BT
+    /F1 10 Tf
+    60 60 Td
+    (Unidade de Destino: unidadeRecebe) Tj
+  ET
+  BT
+    /F1 10 Tf
+    60 25 Td
+    (dataatual) Tj
+  ET
+  BT
+    /F1 18 Tf
+    0 10 Td
+    (___________________________________________) Tj
+  ET
+endstream
+endobj
+
+xref
+0 5
+0000000000 65535 f 
+0000000018 00000 n 
+0000000077 00000 n 
+0000000178 00000 n 
+0000000457 00000 n 
+trailer
+  <<  /Root 1 0 R
+      /Size 5
+  >>
+startxref
+565
+%%EOF
